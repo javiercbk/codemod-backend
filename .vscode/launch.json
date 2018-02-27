@@ -11,7 +11,7 @@
       "cwd": "${workspaceRoot}",
       "env": {
         "NODE_ENV": "DEVELOPMENT",
-        "DIR": "${workspaceRoot}/../lms-spa"
+        "DIR": "${workspaceRoot}/<project>"
       },
       "program": "${workspaceRoot}/bin/www"
     }
