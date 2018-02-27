@@ -119,9 +119,19 @@ const routerFactory = (projectDir) => {
       if (err) {
         next(err);
       } else {
-        const modifiedSrc = codemod(data.toString());
-        res.setHeader('Content-type', 'text/plain');
-        res.status(200).send(modifiedSrc);
+        let modifiedSrc;
+        let error = null;
+        try {
+          modifiedSrc = codemod(data.toString());
+        } catch (e) {
+          error = e;
+        }
+        if (error) {
+          next(error);
+        } else {
+          res.setHeader('Content-type', 'text/plain');
+          res.status(200).send(modifiedSrc);
+        }
       }
     });
   });
