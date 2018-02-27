@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+      "node_modules": true
+    },
+    "editor.formatOnSave": true,
+    "prettier.eslintIntegration": true,
+    "eslint.nodePath": "${workspaceRoot}"
+  }
+  
